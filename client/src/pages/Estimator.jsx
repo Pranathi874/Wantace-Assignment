@@ -9,16 +9,23 @@ export default function Estimator() {
   const currencySymbol = config?.business?.currency === 'INR' ? '₹' : '$'
 
   useEffect(() => {
-    fetch('/api/config').then((r) => r.json()).then(setConfig).catch(console.error)
-  }, [])
-
+  fetch('https://wantace-server.onrender.com/api/config')
+    .then((r) => {
+      if (!r.ok) throw new Error('Failed to load configuration')
+      return r.json()
+    })
+    .then(setConfig)
+    .catch((err) => {
+      console.error('Configuration error:', err)
+    })
+}, [])
   function onChange(key, val) {
     setAnswers((s) => ({ ...s, [key]: val }))
   }
 
   async function submit() {
     const payload = { ...contact, answers }
-    const res = await fetch('/api/estimate', {
+    const res = await fetch('https://wantace-server.onrender.com/api/estimate', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
