@@ -1,0 +1,55 @@
+{
+  "leads": [
+    {
+      "id": 3,
+      "name": "Smoke Tester",
+      "email": "smoke@example.com",
+      "phone": "000",
+      "answers": {
+        "roof_area": 1500,
+        "material": "asphalt_3tab",
+        "pitch": "low",
+        "layers": "none",
+        "stories": "one"
+      },
+      "estimateLow": 6479,
+      "estimateHigh": 8246,
+      "configVersion": 3,
+      "createdAt": "2026-08-17T07:31:06.973Z"
+    },
+    {
+      "id": 2,
+      "name": "Sai Pranathi Kota",
+      "email": "saipranathikota@gmail.com",
+      "phone": "9876543210",
+      "answers": {
+        "roof_area": "400",
+        "material": "architectural",
+        "pitch": "medium",
+        "layers": "one",
+        "stories": "two"
+      },
+      "estimateLow": 3714,
+      "estimateHigh": 4727,
+      "configVersion": 3,
+      "createdAt": "2026-08-17T07:26:33.278Z"
+    },
+    {
+      "id": 1,
+      "name": "Test User",
+      "email": "test@example.com",
+      "phone": "555-1234",
+      "answers": {
+        "roof_area": 2000,
+        "material": "architectural",
+        "pitch": "medium",
+        "layers": "one",
+        "stories": "two"
+      },
+      "estimateLow": 17339,
+      "estimateHigh": 22068,
+      "configVersion": 3,
+      "createdAt": "2026-08-17T07:14:25.438Z"
+    }
+  ]
+}

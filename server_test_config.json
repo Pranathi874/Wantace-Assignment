@@ -1,0 +1,110 @@
+{
+  "config_version": 3,
+  "business": {
+    "name": "Northline Roofing & Exteriors",
+    "currency": "USD"
+  },
+  "questions": [
+    {
+      "key": "roof_area",
+      "label": "Roof Area",
+      "type": "number",
+      "unit": "sqft",
+      "required": true,
+      "min": 100,
+      "max": 20000,
+      "active": true,
+      "order": 1
+    },
+    {
+      "key": "material",
+      "label": "Material",
+      "type": "select",
+      "required": true,
+      "active": true,
+      "order": 2,
+      "options": [
+        {
+          "value": "asphalt_3tab",
+          "label": "Asphalt 3-Tab",
+          "rate_per_sqft": 4.25
+        },
+        {
+          "value": "architectural",
+          "label": "Architectural Shingle",
+          "rate_per_sqft": 6.5
+        }
+      ]
+    },
+    {
+      "key": "pitch",
+      "label": "Roof Pitch",
+      "type": "select",
+      "required": true,
+      "active": true,
+      "order": 3,
+      "options": [
+        {
+          "value": "low",
+          "label": "Low (<=4/12)",
+          "multiplier": 1
+        },
+        {
+          "value": "medium",
+          "label": "Medium (5/12-7/12)",
+          "multiplier": 1.08
+        },
+        {
+          "value": "steep",
+          "label": "Steep (8/12+)",
+          "multiplier": 1.16
+        }
+      ]
+    },
+    {
+      "key": "layers",
+      "label": "Tear-off Layers",
+      "type": "select",
+      "required": true,
+      "active": true,
+      "order": 4,
+      "options": [
+        {
+          "value": "none",
+          "label": "No Tear-off",
+          "tear_off_per_sqft": 0
+        },
+        {
+          "value": "one",
+          "label": "One Layer",
+          "tear_off_per_sqft": 0.85
+        }
+      ]
+    },
+    {
+      "key": "stories",
+      "label": "Number of Stories",
+      "type": "select",
+      "required": true,
+      "active": true,
+      "order": 5,
+      "options": [
+        {
+          "value": "one",
+          "label": "One Story",
+          "multiplier": 1
+        },
+        {
+          "value": "two",
+          "label": "Two Story",
+          "multiplier": 1.12
+        }
+      ]
+    }
+  ],
+  "modifiers": {
+    "waste_factor": 0.1,
+    "permit_flat_fee": 350,
+    "range_spread_pct": 12
+  }
+}
