@@ -15,7 +15,7 @@ function useAuth() {
   const login = async (user, pass, remember = false) => {
     setStatus('')
     try {
-      const response = await fetch('/api/auth/login', {
+      const response = await fetch('https://wantace-server.onrender.com/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: user, password: pass })
@@ -102,7 +102,9 @@ function LeadsTable({ auth }) {
     if (!auth) return
 
     setLoading(true)
-    fetch('/api/admin/leads', { headers: { Authorization: 'Basic ' + auth } })
+    fetch('https://wantace-server.onrender.com/api/admin/leads', {
+  headers: { Authorization: 'Basic ' + auth }
+})
       .then((r) => r.json())
       .then((d) => setLeads(d.leads || []))
       .finally(() => setLoading(false))
@@ -187,7 +189,7 @@ function ConfigEditor({ auth }) {
   const [saveMessage, setSaveMessage] = useState('')
 
   useEffect(() => {
-    fetch('/api/config')
+    fetch('https://wantace-server.onrender.com/api/config')
       .then((r) => r.json())
       .then((data) => setConfig(data))
   }, [])
@@ -212,7 +214,7 @@ function ConfigEditor({ auth }) {
         modifiers: config.modifiers
       }
 
-      const response = await fetch('/api/admin/config', {
+      const response = await fetch('https://wantace-server.onrender.com/api/admin/config', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
